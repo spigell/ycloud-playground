@@ -1,0 +1,6 @@
+/bin/
+/node_modules/
+backend.tf
+.terragrunt-cache
+.terraform
+*.sublime-workspace
