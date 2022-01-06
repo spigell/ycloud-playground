@@ -4,3 +4,4 @@ backend.tf
 .terragrunt-cache
 .terraform
 *.sublime-workspace
+key.json

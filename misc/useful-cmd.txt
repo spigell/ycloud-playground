@@ -1,0 +1,7 @@
+
+# Шифрование всего бакета
+aws --endpoint-url=https://storage.yandexcloud.net s3api get-bucket-encryption --bucket tf-bucket-examples
+
+# Проверить шифрование стейта
+aws --endpoint-url=https://storage.yandexcloud.net   s3api head-object --bucket tf-bucket-examples --key vm/terraform.tfstate-new
+

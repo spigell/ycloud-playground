@@ -1,0 +1,42 @@
+name: lab
+service_account_id: ajehtmumaj2q37ism0mk
+instance_template:
+  platform_id: standard-v2
+  resources_spec:
+    memory: 2g
+    cores: 2
+  boot_disk_spec:
+    mode: READ_WRITE
+    disk_spec:
+      image_id: fd8o5qapn5a2vcl8pmgq
+      type_id: network-hdd
+      size: 32g
+  network_interface_specs:
+    - network_id: enpkqbg1mv53eregrma2
+      primary_v4_address_spec:
+        one_to_one_nat_spec:
+          ip_version: IPV4
+      security_group_ids:
+        - enpr69t1290708q2ph5j
+  scheduling_policy:
+    preemptible: false
+scale_policy:
+  auto_scale:
+    min_zone_size: "1"
+    max_size: "3"
+    measurement_duration: 60s
+    warmup_duration: 0s
+    stabilization_duration: 300s
+    initial_size: "2"
+    cpu_utilization_rule:
+      utilization_target: 60
+deploy_policy:
+  max_unavailable: "1"
+  max_deleting: "3"
+  max_creating: "1"
+  max_expansion: "1"
+  startup_duration: 0s
+allocation_policy:
+  zones:
+  - zone_id: ru-central1-b
+  - zone_id: ru-central1-a

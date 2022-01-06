@@ -1,0 +1,11 @@
+#cloud-config
+ssh_pwauth: no
+users:
+  - name: yc-user
+    plain_text_passwd: '1234'
+    lock_passwd: false
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    shell: /bin/bash
+    ssh_authorized_keys:
+      - "${key}"
+
