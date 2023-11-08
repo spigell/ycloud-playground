@@ -1,6 +1,6 @@
 
 locals {
-  user = "schukh"
+  user = "spigell"
 }
 
 generate "versions" {

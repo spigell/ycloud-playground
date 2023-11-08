@@ -9,7 +9,7 @@ export TF_INPUT := false
 export TF_VAR_token=$(shell yc iam create-token)
 
 bootstrap:
-	terragrunt run-all apply  --terragrunt-include-dir ./live/$(env)/01-bootstrap/
+	terragrunt run-all $(command)  --terragrunt-include-dir ./live/$(env)/01-bootstrap/
 	@echo 'Your terraform has been prepared. You can now use examples via `make playground res=<your res>`'
 
 reconfigure:
